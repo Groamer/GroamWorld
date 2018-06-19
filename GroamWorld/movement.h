@@ -9,7 +9,7 @@ class Movement
 		float yPos;
 	public:
 		void init();
-		void move(int, float);
+		void walk(int, int, float);
 		float getXPos();
 		float getYPos();
 };
