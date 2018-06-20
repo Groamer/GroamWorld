@@ -1,13 +1,13 @@
 #pragma once
 #include "texture.h"
 #include <freeglut.h>
+#include <freeglut.h>
 
-class RawModel
+class Skybox
 {
 	private:
-		Texture* grass;
+		Texture* skybox;
 	public:
 		void init();
-		void setCube(float);
-		void setGround(float);
+		void draw();
 };

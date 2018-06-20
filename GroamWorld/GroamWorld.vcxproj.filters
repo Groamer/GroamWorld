@@ -36,6 +36,9 @@
     <ClInclude Include="texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +57,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="skybox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

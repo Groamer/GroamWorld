@@ -3,7 +3,7 @@
 
 void RawModel::init()
 {
-	grass = new Texture("grass.png");
+	grass = new Texture("pavement_brick.png");
 }
 
 void RawModel::setCube(float size)
@@ -49,6 +49,8 @@ void RawModel::setCube(float size)
 
 void RawModel::setGround(float size)
 {
+	grass->bind();
+
 	float textureSize = 0.25;
 
 	for (float i = 0; i < 10; i++)
@@ -60,20 +62,18 @@ void RawModel::setGround(float size)
 
 			glEnable(GL_TEXTURE_2D);
 			glBegin(GL_QUADS);
-			glTexCoord2f(0.0, 0.0);
-			glVertex3f(-textureSize, -0.5, -textureSize);
-			glTexCoord2f(1.0, 0.0);
-			glVertex3f(textureSize, -0.5, -textureSize);
-			glTexCoord2f(1.0, 1.0);
-			glVertex3f(textureSize, -0.5, textureSize);
-			glTexCoord2f(0.0, 1.0);
-			glVertex3f(-textureSize, -0.5, textureSize);
+				glTexCoord2f(0.0, 0.0);
+				glVertex3f(-textureSize, -0.5, -textureSize);
+				glTexCoord2f(1.0, 0.0);
+				glVertex3f(textureSize, -0.5, -textureSize);
+				glTexCoord2f(1.0, 1.0);
+				glVertex3f(textureSize, -0.5, textureSize);
+				glTexCoord2f(0.0, 1.0);
+				glVertex3f(-textureSize, -0.5, textureSize);
 			glEnd();
 			glDisable(GL_TEXTURE_2D);
 
 			glPopMatrix();
 		}
 	}
-
-	grass->bind();
 }

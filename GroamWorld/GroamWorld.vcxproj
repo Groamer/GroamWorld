@@ -153,6 +153,7 @@
     <ClInclude Include="movement.h" />
     <ClInclude Include="rawModel.h" />
     <ClInclude Include="rotation.h" />
+    <ClInclude Include="skybox.h" />
     <ClInclude Include="stb.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="movement.cpp" />
     <ClCompile Include="rawModel.cpp" />
     <ClCompile Include="rotation.cpp" />
+    <ClCompile Include="skybox.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
