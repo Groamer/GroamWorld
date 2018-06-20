@@ -51,9 +51,9 @@ void RawModel::setGround(float size)
 {
 	float textureSize = 0.25;
 
-	for (float i = 0; i < 100; i++)
+	for (float i = 0; i < 10; i++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int j = 0; j < 10; j++)
 		{
 			glPushMatrix();
 			glTranslatef(i * textureSize * 2, 0.0, j * textureSize * 2);
@@ -62,7 +62,7 @@ void RawModel::setGround(float size)
 			glBegin(GL_QUADS);
 			glTexCoord2f(0.0, 0.0);
 			glVertex3f(-textureSize, -0.5, -textureSize);
-			glTexCoord2f(0.0, 1.0);
+			glTexCoord2f(1.0, 0.0);
 			glVertex3f(textureSize, -0.5, -textureSize);
 			glTexCoord2f(1.0, 1.0);
 			glVertex3f(textureSize, -0.5, textureSize);

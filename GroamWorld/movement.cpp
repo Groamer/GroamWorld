@@ -7,7 +7,7 @@ void Movement::init()
 	yPos = 0;
 }
 
-void Movement::walk(int speed, int angle, float yRot)
+void Movement::walk(float speed, int angle, float yRot)
 {
 	xPos += (float)cos((yRot + angle) / 180 * M_PI) * (0.01 * speed);
 	yPos += (float)sin((yRot + angle) / 180 * M_PI) * (0.01 * speed);

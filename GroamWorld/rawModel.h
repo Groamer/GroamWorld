@@ -1,6 +1,7 @@
 #pragma once
 #include "texture.h"
 #include <freeglut.h>
+#include <vector>
 
 class RawModel
 {
