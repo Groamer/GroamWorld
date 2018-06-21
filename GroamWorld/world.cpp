@@ -27,9 +27,21 @@ bool World::floatEquals(float a, float b)
 
 void World::draw()
 {
-	//cube(-10, -0.1, -10, 10, 0, 10, *grass);
+	cube(0, 0, 0, 15, 0, 12, *grass);
 
-	cube(0, 0, 0, 1.5, 0, 1.5, *grass);
+	//palace
+	cube(0, 0, 12, 15, 0.1, 15, *brick);
+	cube(0, 2, 12, 15, 2.2, 15, *brick);
+	cube(2, 0.1, 12, 2.5, 2, 12.5, *stone);
+	cube(4.5, 0.1, 12, 5, 2, 12.5, *stone);
+	cube(10, 0.1, 12, 10.5, 2, 12.5, *stone);
+	cube(12.5, 0.1, 12, 13, 2, 12.5, *stone);
+
+	//outer walls
+	cube(0, 0, 0, 0, 2, 15, *brick_small);
+	cube(0, 0, 0, 15, 2, 0, *brick_small);
+	cube(15, 0, 0, 15, 2, 15, *brick_small);
+	cube(0, 0, 15, 15, 2, 15, *brick_small);
 }
 
 void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEnd, float zEnd, Texture texture)
@@ -38,7 +50,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 
 	if (!floatEquals(xStart, xEnd) && !floatEquals(yStart, yEnd) && !floatEquals(zStart, zEnd))
 	{
-		for (float x1 = xStart; floatBigger(xEnd, x1); x1++)
+		for (float x1 = xStart; floatBigger(xEnd, x1); x1 ++)
 		{
 			float x2;
 			if (floatBigger(1, xEnd - x1))
@@ -46,7 +58,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 			else
 				x2 = x1 + 1;
 
-			for (float y1 = yStart; floatBigger(yEnd, y1); y1++)
+			for (float y1 = yStart; floatBigger(yEnd, y1); y1 ++)
 			{
 				float y2;
 				if (floatBigger(1, yEnd - y1))
@@ -54,7 +66,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 				else
 					y2 = y1 + 1;
 
-				for (float z1 = zStart; floatBigger(zEnd, z1); z1++)
+				for (float z1 = zStart; floatBigger(zEnd, z1); z1 ++)
 				{
 					float z2;
 					if (floatBigger(1, zEnd - z1))
@@ -135,7 +147,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 		{
 			float x = xStart;
 
-			for (float y1 = yStart; floatBigger(yEnd, y1); y1++)
+			for (float y1 = yStart; floatBigger(yEnd, y1); y1 ++)
 			{
 				float y2;
 				if (floatBigger(1, yEnd - y1))
@@ -143,7 +155,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 				else
 					y2 = y1 + 1;
 
-				for (float z1 = zStart; floatBigger(zEnd, z1); z1++)
+				for (float z1 = zStart; floatBigger(zEnd, z1); z1 ++)
 				{
 					float z2;
 					if (floatBigger(1, zEnd - z1))
@@ -178,7 +190,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 				else
 					x2 = x1 + 1;
 
-				for (float z1 = zStart; floatBigger(zEnd, z1); z1++)
+				for (float z1 = zStart; floatBigger(zEnd, z1); z1 ++)
 				{
 					float z2;
 					if (floatBigger(1, zEnd - z1))
@@ -203,12 +215,42 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 
 		if (floatEquals(zStart, zEnd))
 		{
+			float z = zStart;
 
+			for (float x1 = xStart; floatBigger(xEnd, x1); x1 ++)
+			{
+				float x2;
+				if (floatBigger(1, xEnd - x1))
+					x2 = xEnd;
+				else
+					x2 = x1 + 1;
+
+				for (float y1 = yStart; floatBigger(yEnd, y1); y1 ++)
+				{
+					float y2;
+					if (floatBigger(1, yEnd - y1))
+						y2 = yEnd;
+					else
+						y2 = y1 + 1;
+
+					glEnable(GL_TEXTURE_2D);
+					glBegin(GL_QUADS);
+						glTexCoord2f(0.0, 0.0);
+						glVertex3f(x1, y1, z);
+						glTexCoord2f(1.0, 0.0);
+						glVertex3f(x2, y1, z);
+						glTexCoord2f(1.0, 1.0);
+						glVertex3f(x2, y2, z);
+						glTexCoord2f(0.0, 1.0);
+						glVertex3f(x1, y2, z);
+					glEnd();
+				}
+			}
 		}
 	}
 	else
 	{
-		std::cout << "Could not draw shape." << std::endl;
+		std::cout << "Could not draw shape" << std::endl;
 	}
 	
 }

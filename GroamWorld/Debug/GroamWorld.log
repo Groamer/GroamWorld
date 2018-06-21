@@ -1,2 +1,8 @@
 ﻿  world.cpp
+c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\world.cpp(33): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\world.cpp(34): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\world.cpp(35): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\world.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\world.cpp(37): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\world.cpp(38): warning C4305: 'argument': truncation from 'double' to 'float'
   GroamWorld.vcxproj -> C:\Users\Tom Remeeus\Documents\Visual Studio 2017\GroamWorld\GroamWorld\Debug\GroamWorld.exe
