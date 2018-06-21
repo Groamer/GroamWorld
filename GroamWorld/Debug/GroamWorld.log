@@ -1,22 +1,2 @@
-﻿  skybox.cpp
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(17): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(19): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(23): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(43): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(47): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(49): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(53): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(61): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(63): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(67): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\tom remeeus\documents\visual studio 2017\groamworld\groamworld\groamworld\skybox.cpp(69): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+﻿  world.cpp
   GroamWorld.vcxproj -> C:\Users\Tom Remeeus\Documents\Visual Studio 2017\GroamWorld\GroamWorld\Debug\GroamWorld.exe

@@ -9,5 +9,5 @@ class RawModel
 	public:
 		void init();
 		void setCube(float);
-		void setGround(float);
+		void drawGround(float);
 };

@@ -13,7 +13,7 @@ void Skybox::draw()
 	glDisable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
 	glBegin(GL_QUADS);
-		//front
+		//front side
 		glTexCoord2f(0.25, 0.666667);
 			glVertex3f(-2.5, -2.5, -2.5);
 		glTexCoord2f(0.5, 0.666667);
@@ -23,7 +23,7 @@ void Skybox::draw()
 		glTexCoord2f(0.25, 0.333333);
 			glVertex3f(-2.5, 2.5, -2.5);
 
-		//left
+		//left side
 		glTexCoord2f(0.0, 0.666667);
 			glVertex3f(-2.5, -2.5, 2.5);
 		glTexCoord2f(0.25, 0.666667);
@@ -33,7 +33,7 @@ void Skybox::draw()
 		glTexCoord2f(0.0, 0.333333);
 			glVertex3f(-2.5, 2.5, 2.5);
 
-		//back
+		//back side
 		glTexCoord2f(0.75, 0.666667);
 			glVertex3f(2.5, -2.5, 2.5);
 		glTexCoord2f(1.0, 0.666667);
@@ -43,7 +43,7 @@ void Skybox::draw()
 		glTexCoord2f(0.75, 0.333333);
 			glVertex3f(2.5, 2.5, 2.5);
 
-		//right
+		//right side
 		glTexCoord2f(0.5, 0.666667);
 			glVertex3f(2.5, -2.5, -2.5);
 		glTexCoord2f(0.75, 0.666667);
@@ -53,7 +53,7 @@ void Skybox::draw()
 		glTexCoord2f(0.5, 0.333333);
 			glVertex3f(2.5, 2.5, -2.5);
 
-		//down
+		//bottom side
 		glTexCoord2f(0.25, 1.0);
 			glVertex3f(-2.5, -2.5, -2.5);
 		glTexCoord2f(0.5, 1.0);
@@ -63,7 +63,7 @@ void Skybox::draw()
 		glTexCoord2f(0.25, 0.666667);
 			glVertex3f(-2.5, -2.5, 2.5);
 
-		//up
+		//top side
 		glTexCoord2f(0.25, 0.333333);
 			glVertex3f(-2.5, 2.5, -2.5);
 		glTexCoord2f(0.5, 0.333333);

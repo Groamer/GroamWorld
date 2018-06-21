@@ -3,7 +3,7 @@
 
 void RawModel::init()
 {
-	grass = new Texture("pavement_brick.png");
+	grass = new Texture("Textures/grass.png");
 }
 
 void RawModel::setCube(float size)
@@ -47,7 +47,7 @@ void RawModel::setCube(float size)
 	glEnd();
 }
 
-void RawModel::setGround(float size)
+void RawModel::drawGround(float size)
 {
 	grass->bind();
 

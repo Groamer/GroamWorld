@@ -29,6 +29,8 @@ Texture::Texture(const std::string& file)
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	stbi_image_free(imgData);
+
+	std::cout << "Loaded texture: " << file << std::endl;
 }
 
 void Texture::bind()
