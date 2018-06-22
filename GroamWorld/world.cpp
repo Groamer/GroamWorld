@@ -7,8 +7,6 @@ void World::init()
 	brick = new Texture("Textures/brick.png");
 	brick_small = new Texture("Textures/brick_small.png");
 	stone = new Texture("Textures/stone.png");
-
-	
 }
 
 //Check if a is bigger than b
@@ -29,32 +27,25 @@ bool World::floatEquals(float a, float b)
 
 void World::draw()
 {
-	//set light position at skybox sun
-	GLfloat lightPosition[] = { 2, 2, 2, 1.0 };
-	glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
-	
-	//cube(1.9, 1.9, 1.9, 2.1, 2.1, 2.1, *grass);
-	glMaterialf(GL_FRONT, GL_SHININESS, 60.0);
-
 	//garden
-	cube(0, 0, 0,	15, 0, 12, *grass);
+	cube(0, 0, 0,	15, 0.1, 12, *grass);
 	cube(6, 0, 2,	9, 0.2, 4, *brick);
 	cube(7, 0, 4,	8, 0.1, 12, *brick);
 	cube(7, 0, 2.5, 8, 100, 3.5, *brick);
 
 	//palace
-	cube(0, 0, 12, 15, 0.1, 15, *brick);
+	cube(0, 0, 12, 15, 0.2, 15, *brick);
 	cube(0, 2, 12, 15, 2.2, 15, *brick);
-	cube(2, 0.1, 12, 2.5, 2, 12.5, *stone);
-	cube(4.5, 0.1, 12, 5, 2, 12.5, *stone);
-	cube(10, 0.1, 12, 10.5, 2, 12.5, *stone);
-	cube(12.5, 0.1, 12, 13, 2, 12.5, *stone);
+	cube(2, 0.1, 12.25, 2.5, 2, 12.75, *stone);
+	cube(4.5, 0.1, 12.25, 5, 2, 12.75, *stone);
+	cube(10, 0.1, 12.25, 10.5, 2, 12.75, *stone);
+	cube(12.5, 0.1, 12.25, 13, 2, 12.75, *stone);
 
 	//outer walls
-	cube(0, 0, 0, 0, 2, 15, *brick_small);
-	cube(0, 0, 0, 15, 2, 0, *brick_small);
-	cube(15, 0, 0, 15, 2, 15, *brick_small);
-	cube(0, 0, 15, 15, 2, 15, *brick_small);
+	cube(0, 0, 0, 0.1, 2, 15, *brick_small);
+	cube(0, 0, 0, 15, 2, 0.1, *brick_small);
+	cube(14.9, 0, 0, 15, 2, 15, *brick_small);
+	cube(0, 0, 14.9, 15, 2, 15, *brick_small);
 }
 
 void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEnd, float zEnd, Texture texture)
@@ -90,6 +81,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 					glEnable(GL_TEXTURE_2D);
 					glBegin(GL_QUADS);
 						//front side
+						glNormal3f(0.0, 0.0, -1.0);
 						glTexCoord2f(0.0, 0.0);
 						glVertex3f(x1, y1, z1);
 						glTexCoord2f(1.0, 0.0);
@@ -100,6 +92,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glVertex3f(x1, y2, z1);
 
 						//right side
+						glNormal3f(1.0, 0.0, 0.0);
 						glTexCoord2f(0.0, 0.0);
 						glVertex3f(x2, y1, z1);
 						glTexCoord2f(1.0, 0.0);
@@ -109,7 +102,8 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glTexCoord2f(0.0, 1.0);
 						glVertex3f(x2, y2, z1);
 
-						//right side
+						//back side
+						glNormal3f(0.0, 0.0, 1.0);
 						glTexCoord2f(0.0, 0.0);
 						glVertex3f(x2, y1, z2);
 						glTexCoord2f(1.0, 0.0);
@@ -120,6 +114,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glVertex3f(x2, y2, z2);
 
 						//left side
+						glNormal3f(-1.0, 0.0, 0.0);
 						glTexCoord2f(0.0, 0.0);
 						glVertex3f(x1, y1, z2);
 						glTexCoord2f(1.0, 0.0);
@@ -130,6 +125,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glVertex3f(x1, y2, z2);
 
 						//top side
+						glNormal3f(0.0, 1.0, 0.0);
 						glTexCoord2f(0.0, 0.0);
 						glVertex3f(x1, y2, z1);
 						glTexCoord2f(1.0, 0.0);
@@ -140,6 +136,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glVertex3f(x1, y2, z2);
 
 						//bottom side
+						glNormal3f(0.0, -1.0, 0.0);
 						glTexCoord2f(0.0, 0.0);
 						glVertex3f(x1, y1, z1);
 						glTexCoord2f(1.0, 0.0);
@@ -265,5 +262,4 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 	{
 		std::cout << "Could not draw shape" << std::endl;
 	}
-	
 }
