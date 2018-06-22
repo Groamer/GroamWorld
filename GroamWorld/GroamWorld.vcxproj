@@ -151,7 +151,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="movement.h" />
-    <ClInclude Include="rawModel.h" />
     <ClInclude Include="rotation.h" />
     <ClInclude Include="skybox.h" />
     <ClInclude Include="stb.h" />
@@ -163,7 +162,6 @@
   <ItemGroup>
     <ClCompile Include="GroamWorld.cpp" />
     <ClCompile Include="movement.cpp" />
-    <ClCompile Include="rawModel.cpp" />
     <ClCompile Include="rotation.cpp" />
     <ClCompile Include="skybox.cpp" />
     <ClCompile Include="stdafx.cpp">

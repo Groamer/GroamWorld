@@ -7,6 +7,8 @@ void World::init()
 	brick = new Texture("Textures/brick.png");
 	brick_small = new Texture("Textures/brick_small.png");
 	stone = new Texture("Textures/stone.png");
+
+	
 }
 
 //Check if a is bigger than b
@@ -27,7 +29,18 @@ bool World::floatEquals(float a, float b)
 
 void World::draw()
 {
-	cube(0, 0, 0, 15, 0, 12, *grass);
+	//set light position at skybox sun
+	GLfloat lightPosition[] = { 2, 2, 2, 1.0 };
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+	
+	//cube(1.9, 1.9, 1.9, 2.1, 2.1, 2.1, *grass);
+	glMaterialf(GL_FRONT, GL_SHININESS, 60.0);
+
+	//garden
+	cube(0, 0, 0,	15, 0, 12, *grass);
+	cube(6, 0, 2,	9, 0.2, 4, *brick);
+	cube(7, 0, 4,	8, 0.1, 12, *brick);
+	cube(7, 0, 2.5, 8, 100, 3.5, *brick);
 
 	//palace
 	cube(0, 0, 12, 15, 0.1, 15, *brick);
