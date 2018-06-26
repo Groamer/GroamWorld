@@ -9,6 +9,7 @@ class Texture
 {
 private:
 	GLuint index;
+
 public:
 	Texture(const std::string&);
 	void bind();

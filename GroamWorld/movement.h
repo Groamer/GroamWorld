@@ -6,10 +6,10 @@ class Movement
 {
 	private:
 		float xPos;
-		float yPos;
+		float zPos;
 	public:
-		void init();
+		void init(float, float, float);
 		void walk(float, int, float);
 		float getXPos();
-		float getYPos();
+		float getZPos();
 };

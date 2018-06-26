@@ -3,10 +3,12 @@
 
 void World::init()
 {
-	grass = new Texture("Textures/grass.png");
-	brick = new Texture("Textures/brick.png");
-	brick_small = new Texture("Textures/brick_small.png");
-	stone = new Texture("Textures/stone.png");
+	grass = new Texture("Textures/Materials/grass.png");
+	brick = new Texture("Textures/Materials/brick.png");
+	brick_small = new Texture("Textures/Materials/brick_small.png");
+	stone = new Texture("Textures/Materials/stone.png");
+
+	fountain = new Model("Models/car.obj");
 }
 
 //Check if a is bigger than b
@@ -31,7 +33,7 @@ void World::draw()
 	cube(0, 0, 0,	15, 0.1, 12, *grass);
 	cube(6, 0, 2,	9, 0.2, 4, *brick);
 	cube(7, 0, 4,	8, 0.1, 12, *brick);
-	cube(7, 0, 2.5, 8, 100, 3.5, *brick);
+	cube(7, 0, 2.5, 8, 10, 3.5, *brick);
 
 	//palace
 	cube(0, 0, 12, 15, 0.2, 15, *brick);
@@ -46,6 +48,12 @@ void World::draw()
 	cube(0, 0, 0, 15, 2, 0.1, *brick_small);
 	cube(14.9, 0, 0, 15, 2, 15, *brick_small);
 	cube(0, 0, 14.9, 15, 2, 15, *brick_small);
+
+	//test
+	cube(4, 4, 4, 6, 6, 8, *grass);
+
+	//models
+	fountain->draw(1);
 }
 
 void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEnd, float zEnd, Texture texture)
@@ -184,6 +192,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glTexCoord2f(0.0, 1.0);
 						glVertex3f(x, y1, z2);
 					glEnd();
+					glDisable(GL_TEXTURE_2D);
 				}
 			}
 		}
@@ -219,6 +228,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glTexCoord2f(0.0, 1.0);
 						glVertex3f(x1, y, z2);
 					glEnd();
+					glDisable(GL_TEXTURE_2D);
 				}
 			}
 		}
@@ -254,6 +264,7 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 						glTexCoord2f(0.0, 1.0);
 						glVertex3f(x1, y2, z);
 					glEnd();
+					glDisable(GL_TEXTURE_2D);
 				}
 			}
 		}
