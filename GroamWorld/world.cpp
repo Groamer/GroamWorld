@@ -8,7 +8,7 @@ void World::init()
 	brick_small = new Texture("Textures/Materials/brick_small.png");
 	stone = new Texture("Textures/Materials/stone.png");
 
-	fountain = new Model("Models/car.obj");
+	fountain = new Model("Models/sink.obj");
 }
 
 //Check if a is bigger than b
@@ -53,7 +53,7 @@ void World::draw()
 	cube(4, 4, 4, 6, 6, 8, *grass);
 
 	//models
-	fountain->draw(1);
+	fountain->draw(0.1);
 }
 
 void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEnd, float zEnd, Texture texture)

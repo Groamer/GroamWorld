@@ -1,2 +1,16 @@
-﻿  vertex.cpp
+﻿  world.cpp
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(33): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(34): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(35): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(39): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(40): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(41): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(42): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(43): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(44): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(47): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(48): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(49): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(50): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\users\tom remeeus\documents\github\groamworld\groamworld\world.cpp(56): warning C4305: 'argument': truncation from 'double' to 'float'
   GroamWorld.vcxproj -> D:\Users\Tom Remeeus\Documents\GitHub\GroamWorld\Debug\GroamWorld.exe
