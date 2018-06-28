@@ -1,18 +1,16 @@
 #include "stdafx.h"
 #include "movement.h"
 
-void Movement::init()
+void Movement::init(float x, float y, float z)
 {
-	xPos = 0;
-	yPos = 0;
+	xPos = x;
+	zPos = z;
 }
 
-void Movement::move(int angle, float yRot)
+void Movement::walk(float speed, int angle, float yRot)
 {
-	float speed = 0.01;
-
-	xPos += (float)cos((yRot + angle) / 180 * M_PI) * speed;
-	yPos += (float)sin((yRot + angle) / 180 * M_PI) * speed;
+	xPos += (float)cos((yRot + angle) / 180 * M_PI) * (0.01 * speed);
+	zPos += (float)sin((yRot + angle) / 180 * M_PI) * (0.01 * speed);
 }
 
 float Movement::getXPos()
@@ -20,7 +18,7 @@ float Movement::getXPos()
 	return xPos;
 }
 
-float Movement::getYPos()
+float Movement::getZPos()
 {
-	return yPos;
+	return zPos;
 }
