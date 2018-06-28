@@ -6,6 +6,7 @@ class Vector
 		float x, y, z;
 
 	public:
+		Vector();
 		Vector(float, float, float);
 
 		float getX();

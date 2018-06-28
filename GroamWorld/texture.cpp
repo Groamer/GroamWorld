@@ -3,10 +3,12 @@
 
 Texture::Texture(const std::string& file)
 {
+	std::cout << "Loading texture '" << file << "'...\t";
+
 	std::ifstream pFile(file.c_str());
 	if (!pFile.is_open())
 	{
-		std::cout << "Could not load texture: " << file << std::endl;
+		std::cout << "ERROR: Unable to load texture." << std::endl;
 		return;
 	}
 
@@ -30,7 +32,7 @@ Texture::Texture(const std::string& file)
 
 	stbi_image_free(imgData);
 
-	std::cout << "Loaded texture: " << file << std::endl;
+	std::cout << "SUCCESS" << std::endl;
 }
 
 void Texture::bind()

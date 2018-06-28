@@ -1,46 +1,41 @@
 #include "stdafx.h"
 #include "vertex.h"
 
-#include <iostream>
-
-Vertex::Vertex(Vector a, Vector b, Vector c)
+Vertex::Vertex(Vector& vA, Vector& vB, Vector& vC, Vector& tA, Vector& tB, Vector& tC, Vector& nA, Vector& nB, Vector& nC)
 {
 	triangle = true;
 
-	planeA.vX = a.getX();
-	planeA.vY = a.getY();
-	planeA.vZ = a.getZ();
+	planeA = vA;
+	planeB = vB;
+	planeC = vC;
 
-	planeB.vX = b.getX();
-	planeB.vY = b.getY();
-	planeB.vZ = b.getZ();
+	textureA = tA;
+	textureB = tB;
+	textureC = tC;
 
-	planeC.vX = c.getX();
-	planeC.vY = c.getY();
-	planeC.vZ = c.getZ();
+	normalA = nA;
+	normalB = nB;
+	normalC = nC;
 }
 
-Vertex::Vertex(Vector a, Vector b, Vector c, Vector d)
+Vertex::Vertex(Vector& vA, Vector& vB, Vector& vC, Vector& vD, Vector& tA, Vector& tB, Vector& tC, Vector& tD, Vector& nA, Vector& nB, Vector& nC, Vector& nD)
 {
 	triangle = false;
 
-	planeA.vX = a.getX();
-	planeA.vY = a.getY();
-	planeA.vZ = a.getZ();
+	planeA = vA;
+	planeB = vB;
+	planeC = vC;
+	planeD = vD;
 
-	planeB.vX = b.getX();
-	planeB.vY = b.getY();
-	planeB.vZ = b.getZ();
+	textureA = tA;
+	textureB = tB;
+	textureC = tC;
+	textureD = tD;
 
-	planeC.vX = c.getX();
-	planeC.vY = c.getY();
-	planeC.vZ = c.getZ();
-
-	planeD.vX = d.getX();
-	planeD.vY = d.getY();
-	planeD.vZ = d.getZ();
-
-	//std::cout << "quad Plane A: " << file << std::endl;
+	normalA = nA;
+	normalB = nB;
+	normalC = nC;
+	normalD = nD;
 }
 
 void Vertex::draw()
@@ -48,18 +43,37 @@ void Vertex::draw()
 	if (triangle)
 	{
 		glBegin(GL_TRIANGLES);
-			glVertex3f(planeA.vX, planeA.vY, planeA.vZ);
-			glVertex3f(planeB.vX, planeB.vY, planeB.vZ);
-			glVertex3f(planeC.vX, planeC.vY, planeC.vZ);
+			glNormal3f(normalA.getX(), normalA.getY(), normalA.getZ());
+			glTexCoord2f(textureA.getX(), -textureA.getY());
+			glVertex3f(planeA.getX(), planeA.getY(), planeA.getZ());
+
+			glNormal3f(normalB.getX(), normalB.getY(), normalB.getZ());
+			glTexCoord2f(textureB.getX(), -textureB.getY());
+			glVertex3f(planeB.getX(), planeB.getY(), planeB.getZ());
+
+			glNormal3f(normalC.getX(), normalC.getY(), normalC.getZ());
+			glTexCoord2f(textureC.getX(), -textureC.getY());
+			glVertex3f(planeC.getX(), planeC.getY(), planeC.getZ());
 		glEnd();
 	}
 	else
 	{
 		glBegin(GL_QUADS);
-			glVertex3f(planeA.vX, planeA.vY, planeA.vZ);
-			glVertex3f(planeB.vX, planeB.vY, planeB.vZ);
-			glVertex3f(planeC.vX, planeC.vY, planeC.vZ);
-			glVertex3f(planeD.vX, planeD.vY, planeD.vZ);
+			glNormal3f(normalA.getX(), normalA.getY(), normalA.getZ());
+			glTexCoord2f(textureA.getX(), -textureA.getY());
+			glVertex3f(planeA.getX(), planeA.getY(), planeA.getZ());
+
+			glNormal3f(normalB.getX(), normalB.getY(), normalB.getZ());
+			glTexCoord2f(textureB.getX(), -textureB.getY());
+			glVertex3f(planeB.getX(), planeB.getY(), planeB.getZ());
+
+			glNormal3f(normalC.getX(), normalC.getY(), normalC.getZ());
+			glTexCoord2f(textureC.getX(), -textureC.getY());
+			glVertex3f(planeC.getX(), planeC.getY(), planeC.getZ());
+
+			glNormal3f(normalD.getX(), normalD.getY(), normalD.getZ());
+			glTexCoord2f(textureD.getX(), -textureD.getY());
+			glVertex3f(planeD.getX(), planeD.getY(), planeD.getZ());
 		glEnd();
 	}
 }

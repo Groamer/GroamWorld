@@ -3,12 +3,17 @@
 
 void World::init()
 {
+	rotate = 0.0f;
+
+	statue = new Model("Models/statue.obj", "Textures/Models/statue.png");
+	windmill = new Model("Models/windmill.obj", "Textures/Models/windmill.png");
+	chapel = new Model("Models/chapel.obj", "Textures/Models/chapel.png");
+
 	grass = new Texture("Textures/Materials/grass.png");
+	wall = new Texture("Textures/Materials/wall.png");
+	wall_shattered = new Texture("Textures/Materials/wall_shattered.png");
 	brick = new Texture("Textures/Materials/brick.png");
 	brick_small = new Texture("Textures/Materials/brick_small.png");
-	stone = new Texture("Textures/Materials/stone.png");
-
-	fountain = new Model("Models/sink.obj");
 }
 
 //Check if a is bigger than b
@@ -29,31 +34,38 @@ bool World::floatEquals(float a, float b)
 
 void World::draw()
 {
+	if (rotate >= 360.0f)
+	{
+		rotate = 0.0f;
+	}
+
+	rotate += 0.2f;
+
 	//garden
 	cube(0, 0, 0,	15, 0.1, 12, *grass);
 	cube(6, 0, 2,	9, 0.2, 4, *brick);
-	cube(7, 0, 4,	8, 0.1, 12, *brick);
-	cube(7, 0, 2.5, 8, 10, 3.5, *brick);
+	cube(7, 0, 4,	8, 0.11, 12, *brick);
 
 	//palace
 	cube(0, 0, 12, 15, 0.2, 15, *brick);
 	cube(0, 2, 12, 15, 2.2, 15, *brick);
-	cube(2, 0.1, 12.25, 2.5, 2, 12.75, *stone);
-	cube(4.5, 0.1, 12.25, 5, 2, 12.75, *stone);
-	cube(10, 0.1, 12.25, 10.5, 2, 12.75, *stone);
-	cube(12.5, 0.1, 12.25, 13, 2, 12.75, *stone);
+	cube(0, 0, 14.9, 15, 2.0, 15, *wall);
 
-	//outer walls
-	cube(0, 0, 0, 0.1, 2, 15, *brick_small);
-	cube(0, 0, 0, 15, 2, 0.1, *brick_small);
-	cube(14.9, 0, 0, 15, 2, 15, *brick_small);
-	cube(0, 0, 14.9, 15, 2, 15, *brick_small);
+	//pillar
+	cube(2, 0.1, 12.25, 2.5, 2, 12.75, *brick_small);
+	cube(4.5, 0.1, 12.25, 5, 2, 12.75, *brick_small);
+	cube(10, 0.1, 12.25, 10.5, 2, 12.75, *brick_small);
+	cube(12.5, 0.1, 12.25, 13, 2, 12.75, *brick_small);
 
-	//test
-	cube(4, 4, 4, 6, 6, 8, *grass);
+	//fence
+	cube(0, 0, 0, 0.1, 1, 15, *wall_shattered);
+	cube(0, 0, 0, 15, 1, 0.1, *wall_shattered);
+	cube(14.9, 0, 0, 15, 1, 15, *wall_shattered);
 
 	//models
-	fountain->draw(0.1);
+	statue->draw(7.45, 0.2, 3, rotate, 0.5);
+	windmill->draw(13, 0, 2, -45, 0.005);
+	chapel->draw(-4.5, 0, 4, 90, 0.01);
 }
 
 void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEnd, float zEnd, Texture texture)

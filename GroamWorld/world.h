@@ -6,12 +6,17 @@
 class World
 {
 	private:
+		float rotate;
+
+		Model* statue;
+		Model* windmill;
+		Model* chapel;
+
 		Texture* grass;
+		Texture* wall;
+		Texture* wall_shattered;
 		Texture* brick;
 		Texture* brick_small;
-		Texture* stone;
-
-		Model* fountain;
 
 		void cube(float, float, float, float, float, float, Texture);
 		bool floatBigger(float, float);

@@ -4,21 +4,27 @@
 
 class Vertex
 {
-	struct vec3D
-	{
-		float vX, vY, vZ;
-	};
-
 	private:
 		bool triangle;
-		vec3D planeA;
-		vec3D planeB;
-		vec3D planeC;
-		vec3D planeD;
+
+		Vector planeA;
+		Vector planeB;
+		Vector planeC;
+		Vector planeD;
+
+		Vector textureA;
+		Vector textureB;
+		Vector textureC;
+		Vector textureD;
+
+		Vector normalA;
+		Vector normalB;
+		Vector normalC;
+		Vector normalD;
 
 	public:
-		Vertex(Vector, Vector, Vector);
-		Vertex(Vector, Vector, Vector, Vector);
+		Vertex(Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&);
+		Vertex(Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&, Vector&);
 
 		void draw();
 };

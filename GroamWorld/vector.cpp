@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "vector.h"
 
+Vector::Vector()
+{
+
+}
+
 Vector::Vector(float xCoor, float yCoor, float zCoor)
 {
 	x = xCoor;

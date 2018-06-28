@@ -1,7 +1,7 @@
 #pragma once
 #include "vector.h"
 #include "vertex.h"
-#include <freeglut.h>
+#include "texture.h"
 #include <stdlib.h>
 #include <vector>
 #include <list>
@@ -16,6 +16,8 @@ class Model
 	private:
 		GLuint index;
 
+		Texture* texture;
+
 		std::vector<Vertex> vertexIndex;
 
 		std::vector<Vector> vertices;
@@ -26,10 +28,11 @@ class Model
 		std::vector<std::string> splitLine(const std::string&);
 		std::vector<std::string> splitLine(const std::string&, char);
 
+		void load(const std::string&);
 		void bind();
 
 	public:
 		Model(const std::string&);
-
-		void draw(float);
+		Model(const std::string&, const std::string&);
+		void draw(float, float, float, float, float);
 };
