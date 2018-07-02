@@ -4,18 +4,24 @@
 void Movement::init(float x, float y, float z)
 {
 	xPos = x;
+	yPos = y;
 	zPos = z;
 }
 
-void Movement::walk(float speed, int angle, float yRot)
+void Movement::walk(float speed, int angle, int yRot)
 {
-	xPos += (float)cos((yRot + angle) / 180 * M_PI) * (0.01 * speed);
-	zPos += (float)sin((yRot + angle) / 180 * M_PI) * (0.01 * speed);
+	xPos += (float)cos((float(yRot) + angle) / 180 * M_PI) * speed;
+	zPos += (float)sin((float(yRot) + angle) / 180 * M_PI) * speed;
 }
 
 float Movement::getXPos()
 {
 	return xPos;
+}
+
+float Movement::getYPos()
+{
+	return yPos;
 }
 
 float Movement::getZPos()

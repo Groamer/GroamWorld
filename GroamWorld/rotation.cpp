@@ -36,12 +36,12 @@ void Rotation::rotate(int width, int height)
 	}
 }
 
-float Rotation::getXRot()
+int Rotation::getXRot()
 {
 	return xRot;
 }
 
-float Rotation::getYRot()
+int Rotation::getYRot()
 {
 	return yRot;
 }

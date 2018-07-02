@@ -39,33 +39,33 @@ void World::draw()
 		rotate = 0.0f;
 	}
 
-	rotate += 0.2f;
+	rotate += 0.5f;
 
 	//garden
-	cube(0, 0, 0,	15, 0.1, 12, *grass);
-	cube(6, 0, 2,	9, 0.2, 4, *brick);
-	cube(7, 0, 4,	8, 0.11, 12, *brick);
+	cube(0.0f, 0.0f, 0.0f,	15.0f, 0.1f, 12.0f, *grass);
+	cube(6.0f, 0.0f, 2.0f,	9.0f, 0.2f, 4.0f, *brick);
+	cube(7.0f, 0.0f, 4.0f,	8.0f, 0.11f, 12.0f, *brick);
 
 	//palace
-	cube(0, 0, 12, 15, 0.2, 15, *brick);
-	cube(0, 2, 12, 15, 2.2, 15, *brick);
-	cube(0, 0, 14.9, 15, 2.0, 15, *wall);
+	cube(0.0f, 0.0f, 12.0f, 15.0f, 0.2f, 15.0f, *brick);
+	cube(0.0f, 2.0f, 12.0f, 15.0f, 2.2f, 15.0f, *brick);
+	cube(0.0f, 0.0f, 14.9f, 15.0f, 2.0f, 15.0f, *wall);
 
 	//pillar
-	cube(2, 0.1, 12.25, 2.5, 2, 12.75, *brick_small);
-	cube(4.5, 0.1, 12.25, 5, 2, 12.75, *brick_small);
-	cube(10, 0.1, 12.25, 10.5, 2, 12.75, *brick_small);
-	cube(12.5, 0.1, 12.25, 13, 2, 12.75, *brick_small);
+	cube(2.0f, 0.1f, 12.25f, 2.5f, 2.0f, 12.75f, *brick_small);
+	cube(4.5f, 0.1f, 12.25f, 5.0f, 2.0f, 12.75f, *brick_small);
+	cube(10.0f, 0.1f, 12.25f, 10.5f, 2.0f, 12.75f, *brick_small);
+	cube(12.5f, 0.1f, 12.25f, 13.0f, 2.0f, 12.75f, *brick_small);
 
 	//fence
-	cube(0, 0, 0, 0.1, 1, 15, *wall_shattered);
-	cube(0, 0, 0, 15, 1, 0.1, *wall_shattered);
-	cube(14.9, 0, 0, 15, 1, 15, *wall_shattered);
+	cube(0.0f, 0.0f, 0.0f, 0.1f, 1.0f, 15.0f, *wall_shattered);
+	cube(0.0f, 0.0f, 0.0f, 15.0f, 1.0f, 0.1f, *wall_shattered);
+	cube(14.9f, 0.0f, 0.0f, 15.0f, 1.0f, 15.0f, *wall_shattered);
 
 	//models
-	statue->draw(7.45, 0.2, 3, rotate, 0.5);
-	windmill->draw(13, 0, 2, -45, 0.005);
-	chapel->draw(-4.5, 0, 4, 90, 0.01);
+	statue->draw(7.45f, 0.2f, 3.0f, rotate, 0.5f);
+	windmill->draw(13.0f, 0.0f, 2.0f, -45.0f, 0.005f);
+	chapel->draw(-4.5f, 0.0f, 4.0f, 90.0f, 0.01f);
 }
 
 void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEnd, float zEnd, Texture texture)
@@ -101,69 +101,69 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 					glEnable(GL_TEXTURE_2D);
 					glBegin(GL_QUADS);
 						//front side
-						glNormal3f(0.0, 0.0, -1.0);
-						glTexCoord2f(0.0, 0.0);
+						glNormal3f(0.0f, 0.0f, -1.0f);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x1, y1, z1);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x2, y1, z1);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x2, y2, z1);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x1, y2, z1);
 
 						//right side
-						glNormal3f(1.0, 0.0, 0.0);
-						glTexCoord2f(0.0, 0.0);
+						glNormal3f(1.0f, 0.0f, 0.0f);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x2, y1, z1);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x2, y1, z2);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x2, y2, z2);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x2, y2, z1);
 
 						//back side
-						glNormal3f(0.0, 0.0, 1.0);
-						glTexCoord2f(0.0, 0.0);
+						glNormal3f(0.0f, 0.0f, 1.0f);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x2, y1, z2);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x1, y1, z2);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x1, y2, z2);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x2, y2, z2);
 
 						//left side
-						glNormal3f(-1.0, 0.0, 0.0);
-						glTexCoord2f(0.0, 0.0);
+						glNormal3f(-1.0f, 0.0f, 0.0f);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x1, y1, z2);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x1, y1, z1);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x1, y2, z1);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x1, y2, z2);
 
 						//top side
-						glNormal3f(0.0, 1.0, 0.0);
-						glTexCoord2f(0.0, 0.0);
+						glNormal3f(0.0f, 1.0f, 0.0f);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x1, y2, z1);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x2, y2, z1);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x2, y2, z2);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x1, y2, z2);
 
 						//bottom side
-						glNormal3f(0.0, -1.0, 0.0);
-						glTexCoord2f(0.0, 0.0);
+						glNormal3f(0.0f, -1.0f, 0.0f);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x1, y1, z1);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x2, y1, z1);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x2, y1, z2);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x1, y1, z2);
 					glEnd();
 					glDisable(GL_TEXTURE_2D);
@@ -195,13 +195,13 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 
 					glEnable(GL_TEXTURE_2D);
 					glBegin(GL_QUADS);
-						glTexCoord2f(0.0, 0.0);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x, y1, z1);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x, y2, z1);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x, y2, z2);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x, y1, z2);
 					glEnd();
 					glDisable(GL_TEXTURE_2D);
@@ -231,13 +231,13 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 
 					glEnable(GL_TEXTURE_2D);
 					glBegin(GL_QUADS);
-						glTexCoord2f(0.0, 0.0);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x1, y, z1);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x2, y, z1);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x2, y, z2);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x1, y, z2);
 					glEnd();
 					glDisable(GL_TEXTURE_2D);
@@ -267,13 +267,13 @@ void World::cube(float xStart, float yStart, float zStart, float xEnd, float yEn
 
 					glEnable(GL_TEXTURE_2D);
 					glBegin(GL_QUADS);
-						glTexCoord2f(0.0, 0.0);
+						glTexCoord2f(0.0f, 0.0f);
 						glVertex3f(x1, y1, z);
-						glTexCoord2f(1.0, 0.0);
+						glTexCoord2f(1.0f, 0.0f);
 						glVertex3f(x2, y1, z);
-						glTexCoord2f(1.0, 1.0);
+						glTexCoord2f(1.0f, 1.0f);
 						glVertex3f(x2, y2, z);
-						glTexCoord2f(0.0, 1.0);
+						glTexCoord2f(0.0f, 1.0f);
 						glVertex3f(x1, y2, z);
 					glEnd();
 					glDisable(GL_TEXTURE_2D);
